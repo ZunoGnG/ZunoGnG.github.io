@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <!-- Fonte de texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Inter', 'Arial', 'Sans-serif';
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #inicio_link::before {
+            content: '';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-image: url(imagens/casa_icone.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 8px;
+            vertical-align: middle;
+            position: absolute;
+            top: 175px;
+            left: 50px;
+            opacity: 70%;
+        }
+
+        /* Header */
+
+        header {
+            background-color: #43476B;
+            color: white;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 5px 0px;
+            height: 150px;
+        }
+
+        header>h1 {
+            font-size: 45px;
+        }
+
+        header>nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        header>nav>ul {
+            columns: 4;
+            list-style: none;
+        }
+
+        header>nav>ul>li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header>nav>ul>li>a,
+        header>nav>ul>li>a:visited {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main */
+
+        #titulo_principal {
+            margin-top: 50px;
+            font-size: 25px;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 10px;
+            height: 100%;
+            min-height: 1000px;
+            color: #2B2B33;
+            background-image: linear-gradient(96deg, white 25%, #888aa3);
+        }
+
+        .lista_projetos {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            row-gap: 10px;
+            column-gap: 10px;
+            padding: 10px;
+        }
+
+        .projeto_card {
+            width: 650px;
+            border: solid 0.5px gray;
+            border-radius: 5px;
+            box-shadow: 0px 0px 3px 0px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 5px;
+            text-align: center;
+            background-color: #dadcff;
+        }
+
+        #imagem_projeto_container {
+            width: 80%;
+        }
+
+        .link_projeto_github {
+            background-color: #2B2B33;
+            border-radius: 3px;
+            border: none;
+            text-decoration: none;
+            padding: 10px;
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        .link_projeto_github:hover {
+            background-color: #545461;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #43476B;
+            color: white;
+            width: 100%;
+            padding: 5px 0px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        /*Icones, a ideia aqui é criar um icone usando uma imagem antes do texto*/
+        .python_icone::before,
+        .php_icone::before,
+        .css_icone::before,
+        .html_icone::before,
+        .js_icone::before {
+            content: '';
+            /*Para ignorar o conteúdo já existente*/
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            /*Para não repetir a imagem dentro do container*/
+            background-position: center;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .python_icone::before {
+            background-image: url('imagens/python_icon.png');
+        }
+
+        .php_icone::before {
+            background-image: url('imagens/php_icon.png');
+        }
+
+        .css_icone::before {
+            background-image: url('imagens/css_icon.png');
+        }
+
+        .html_icone::before {
+            background-image: url('imagens/html_icon.png');
+        }
+
+        .js_icone::before {
+            background-image: url('imagens/js_icon.png');
+        }
+
+        /*Responsividade*/
+
+        @media screen and (max-width: 1115px) {
+            header>nav>ul {
+                columns: 4;
+                list-style: none;
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 720px) {
+            .projeto_card {
+                width: 400px;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            .projeto_card {
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 470px) {
+            #inicio_link::before {
+                left: 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Portifólio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre mim</a></li>
+                <li><a href="#titulo_principal">Portifólio</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="contatos.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a href="index.html" id="inicio_link"></a>
+        <div class="lista_projetos">
+            <h2 id="titulo_principal">Portifólio de projetos:</h2>
+            <div class="projeto_card">
+                <h3>Projeto em python - Trabalho de faculdade</h3>
+                <img src="imagens/trabalho_python.jpg" alt="Imagem de apresentação do projeto"
+                    id="imagem_projeto_container">
+                <h4>Descrição:</h4>
+                <p class="texto_projeto_container">O objetivo deste projeto foi desenvolver algorítmos em Python
+                    seguindo os critérios citados pela instituição de ensino com objetivo de ser avaliado e conseguir a
+                    aprovação na disciplina.</p>
+                <h4>Técnologias utilizadas:</h4>
+                <p class="python_icone">Python - Linguagem de programação</p>
+                <a href="https://github.com/ZunoGnG/trabalho_faculdade_logica" class="link_projeto_github"
+                    target="_blank">Veja mais no repositório</a>
+            </div>
+
+            <div class="projeto_card">
+                <h3>Projeto de conclusão de curso - Aplicação web</h3>
+                <img src="imagens/trabalho_conclusao_curso.png" alt="Imagem de apresentação do projeto"
+                    id="imagem_projeto_container">
+                <h4>Descrição:</h4>
+                <p class="texto_projeto_container">Trabalho de conclusão de curso. O objetivo aqui foi desenvolver uma
+                    aplicação completa usando PHP, Javascript, HTML e CSS</p>
+                <h4>Técnologias utilizadas:</h4>
+                <p class="js_icone">Javascript - Linguagem de programação</p>
+                <p class="html_icone">HTML - Linguagem de marcação de hipertexto</p>
+                <p class="css_icone">CSS - Linguagem de estilização</p>
+                <p class="php_icone">PHP - Linguagem de programação</p>
+                <a href="https://github.com/ZunoGnG/trabalho_conclusao_curso" class="link_projeto_github"
+                    target="_blank">Veja mais no repositório</a>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy;Weslley Felix de Almeida</p>
+    </footer>
+    <script>
+    </script>
+</body>
+
+</html>

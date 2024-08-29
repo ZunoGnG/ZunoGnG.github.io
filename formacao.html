@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação</title>
+    <!-- Fonte de texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Inter', 'Arial', 'Sans-serif';
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        /*Icones, a ideia aqui é criar um icone usando uma imagem antes do texto*/
+
+        #inicio_link::before {
+            content: '';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-image: url(imagens/casa_icone.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 8px;
+            vertical-align: middle;
+            position: absolute;
+            top: 175px;
+            left: 50px;
+            opacity: 70%;
+        }
+
+        /* Header */
+
+        header {
+            background-color: #43476B;
+            color: white;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 5px 0px;
+            height: 150px;
+        }
+
+        header>h1 {
+            font-size: 45px;
+        }
+
+        header>nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        header>nav>ul {
+            columns: 4;
+            list-style: none;
+        }
+
+        header>nav>ul>li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header>nav>ul>li>a,
+        header>nav>ul>li>a:visited {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main */
+
+        #titulo_principal {
+            margin-top: 50px;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 10px;
+            height: 100%;
+            min-height: 1000px;
+            color: #2B2B33;
+            background-image: linear-gradient(96deg, white 25%, #888aa3);
+        }
+
+        li>p {
+            font-size: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #43476B;
+            color: white;
+            width: 100%;
+            padding: 5px 0px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        /*Responsividade*/
+
+        @media screen and (max-width: 1115px) {
+            header>nav>ul {
+                columns: 4;
+                list-style: none;
+                font-size: 14px;
+            }
+
+            li>p {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 470px) {
+            #inicio_link::before {
+                left: 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Portifólio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre mim</a></li>
+                <li><a href="portifolio.html">Portifólio</a></li>
+                <li><a href="#titulo_principal">Formação</a></li>
+                <li><a href="contatos.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a href="index.html" id="inicio_link"></a>
+        <div>
+            <h2 id="titulo_principal">Formação</h2>
+            <ul>
+                <li>
+                    <p>Ensino médio - Completo</p>
+                </li>
+                <li>
+                    <p>Técnico em Desenvolvimento de sistemas - Concluído</p>
+                </li>
+                <li>
+                    <p>Ensino superior - Tecnologia em Análise e Desenvolvimento de Sistemas - Cursando</p>
+                </li>
+            </ul>
+            <h2 style="margin-top: 10px;">Idiomas:</h2>
+            <ul>
+                <li>
+                    <p>Português - Nativo</p>
+                </li>
+                <li>
+                    <p>Inglês - Intermediário</p>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;Weslley Felix de Almeida</p>
+    </footer>
+    <script>
+    </script>
+</body>
+
+</html>

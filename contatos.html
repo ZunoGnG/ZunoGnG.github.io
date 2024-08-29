@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+    <!-- Fonte de texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Inter', 'Arial', 'Sans-serif';
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #inicio_link::before {
+            content: '';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-image: url(imagens/casa_icone.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 8px;
+            vertical-align: middle;
+            position: absolute;
+            top: 175px;
+            left: 50px;
+            opacity: 70%;
+        }
+
+        /* Header */
+
+        header {
+            background-color: #43476B;
+            color: white;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 5px 0px;
+            height: 150px;
+        }
+
+        header>h1 {
+            font-size: 45px;
+        }
+
+        header>nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        header>nav>ul {
+            columns: 4;
+            list-style: none;
+        }
+
+        header>nav>ul>li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header>nav>ul>li>a,
+        header>nav>ul>li>a:visited {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main */
+
+        #titulo_principal {
+            margin-top: 50px;
+        }
+
+        #titulo_secundario {
+            margin: 10px 0px;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 10px;
+            height: 100%;
+            min-height: 1000px;
+            color: #2B2B33;
+            background-image: linear-gradient(96deg, white 25%, #888aa3);
+        }
+
+        section>p {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        section a:visited {
+            color: #2B2B33;
+        }
+
+        section a:hover {
+            transition: 0.5s;
+            color: #43476B;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        .linha_formulario {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .linha_formulario>input {
+            width: 300px;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid lightblue;
+        }
+
+        .caixa_texto {
+            display: flex;
+            row-gap: 10px;
+            flex-direction: column;
+        }
+
+        .caixa_texto>textarea {
+            width: 400px;
+            height: 300px;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid lightblue;
+            text-align: justify;
+        }
+
+        input[type=submit] {
+            width: 300px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid lightblue;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: rgb(0, 134, 179);
+            color: white;
+            transition: 0.5s;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: #43476B;
+            color: white;
+            width: 100%;
+            padding: 5px 0px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        /*Icones, a ideia aqui é criar um icone usando uma imagem antes do texto*/
+        .email_icone::before,
+        .linkedin_icone::before,
+        .github_icone::before {
+            content: '';
+            /*Para ignorar o conteúdo já existente*/
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            /*Para não repetir a imagem dentro do container*/
+            background-position: center;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .email_icone::before {
+            background-image: url('imagens/email_icon.png');
+        }
+
+        .linkedin_icone::before {
+            background-image: url('imagens/linkedin_icon.png');
+        }
+
+        .github_icone::before {
+            background-image: url('imagens/github_icon.png');
+        }
+
+        /*Responsividade*/
+
+        @media screen and (max-width: 1115px) {
+            header>nav>ul {
+                columns: 4;
+                list-style: none;
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .linha_formulario {
+                flex-direction: column;
+            }
+
+            .caixa_texto {
+                display: flex;
+                row-gap: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            form {
+                align-items: center;
+            }
+
+            .linha_formulario>input {
+                width: 250px;
+            }
+
+            .caixa_texto>textarea {
+                width: 95%;
+            }
+
+            .email_icone::before {
+                margin-top: 5px;
+            }
+
+            .linkedin_icone::before {
+                margin-top: 5px;
+            }
+
+            .github_icone::before {
+                margin-top: 5px;
+            }
+        }
+
+        @media screen and (max-width: 470px) {
+            #inicio_link::before {
+                left: 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Portifólio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre mim</a></li>
+                <li><a href="portifolio.html">Portifólio</a></li>
+                <li><a href="formacao.html">Formação</a></li>
+                <li><a href="#titulo_principal">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a href="index.html" id="inicio_link"></a>
+        <section>
+            <h2 id="titulo_principal">Contatos</h2>
+            <p class="email_icone">E-mail:
+                <a href="mailto:weslleyfelixdealmeida@gmail.com" target="_blank"
+                    id="email_link">weslleyfelixdealmeida@gmail.com</a>
+            </p>
+            <p class="linkedin_icone">Linkedin:
+                <a href="https://www.linkedin.com/in/weslley-f-almeida/"
+                    target="_blank">www.linkedin.com/in/weslley-f-almeida
+                </a>
+            </p>
+            <p class="github_icone">GitHub: <a href="https://github.com/ZunoGnG"
+                    target="_blank">https://github.com/ZunoGnG</a></p>
+
+            <h2 id="titulo_secundario">Gostaria de entrar em contato de forma mais direta?</h2>
+            <form id="formulario_contato">
+                <h3>Preencha as informações abaixo:</h3>
+                <div class="linha_formulario">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Informe seu nome" required>
+                </div>
+
+                <div class="linha_formulario">
+                    <label for="email">Informe seu E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Informe seu e-mail para contato" required>
+                </div>
+
+                <div class="caixa_texto">
+                    <label for="texto_contato">Fale um pouco mais sobre o motivo do contato:</label>
+                    <textarea name="texto_contato" id="texto_contato" placeholder="Digite sua mensagem" required
+                        maxlength="800"></textarea>
+                </div>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;Weslley Felix de Almeida</p>
+    </footer>
+    <script>
+        document.getElementById('formulario_contato').addEventListener('submit', (e) => {
+            e.preventDefault(); //este "e" é referente ao evento que vai ocorrer, desta forma é possível manipular o evento. Aqui ele está sendo "impedido" de acontecer
+            alert('Mensagem enviada!');
+            document.querySelector('#formulario_contato').submit(); //Comando usado para enviar o formulário
+        })
+    </script>
+</body>
+
+</html>
